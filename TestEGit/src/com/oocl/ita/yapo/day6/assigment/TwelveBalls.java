@@ -35,7 +35,7 @@ public class TwelveBalls {
 		
 		C.add(1);
 		C.add(1);
-		C.add(0);
+		C.add(1);
 		C.add(1);
 		
 		System.out.println("A: " + A.toString());
@@ -54,7 +54,7 @@ public class TwelveBalls {
 			System.out.println("Remove A4 in A group and remove C4 in C group");
 			System.out.println("Compare A1, A2, A3 and C1, C2, C3");
 			if (sumA == sumC) {
-				System.out.println("A group ");
+				System.out.println("A group and C group are equal");
 				System.out.println("C4 is the odd ball");
 			} else if (sumC < sumA) {
 				System.out.println("C group is lighter than A group");
@@ -70,11 +70,68 @@ public class TwelveBalls {
 					System.out.println("C1 and C2 is equal");
 					System.out.println("C3 is the odd ball");
 				}
-			} else if (sumA > sumC) {
-				
+			} else if (sumC > sumA) {
+				System.out.println("C group is heavier than A group");
+				System.out.println("Either C1, C2, C3 is the odd (heavier) ball");
+				System.out.println("Remove C3 in C group and compare C1 and C2");
+				if (C.get(0).intValue() <  C.get(1).intValue()) {
+					System.out.println("C2 is heavier than C1");
+					System.out.println("C2 is the odd ball");
+				} else if (C.get(0).intValue() >  C.get(1).intValue()) {
+					System.out.println("C1 is heavier than C2");
+					System.out.println("C1 is the odd ball");
+				} else if (C.get(0).intValue() ==  C.get(1).intValue()) {
+					System.out.println("C1 and C2 is equal");
+					System.out.println("C3 is the odd ball");
+				}
 			}
 		} else if(sumA > sumB) {
+			System.out.println("A group is heavier than B group");
+			System.out.println("Spread the B group, retain B1 and B2 then place with C1");
+			System.out.println("Put B3 and B4 on the other side then place with A4");
+			sumA = A.get(0).intValue() + B.get(2).intValue() + B.get(3).intValue(); 
+			sumB = C.get(0).intValue() + B.get(0).intValue() + B.get(1).intValue();
 			
+			if (sumA > sumB) {
+				System.out.println("B group with A4 is heavier than B group with C1");
+				System.out.println("Either A4 is heavier (odd) or B1-B2 is lighter (odd)");
+			
+				if(B.get(0).intValue() > B.get(1).intValue()) {
+					System.out.println("B1 is heavier than B2");
+					System.out.println("B2 is the odd ball");
+				} else if(B.get(0).intValue() < B.get(1).intValue()) {
+					System.out.println("B2 is heavier than B1");
+					System.out.println("B1 is the odd ball");
+				} else if(B.get(0).intValue() == B.get(1).intValue()) {
+					System.out.println("B1 and B2");
+					System.out.println("A4 is the odd all");
+				}
+			} else if (sumA < sumB) {
+				System.out.println("B group with A4 is lighter than B group with C1");
+				System.out.println("Either B3-B4 is lighter (odd)");
+				
+				if(B.get(2).intValue() > B.get(3).intValue()) {
+					System.out.println("B3 is lighter than B4");
+					System.out.println("B3 is the odd ball");
+				} else if(B.get(2).intValue() < B.get(3).intValue()) {
+					System.out.println("B4 is lighter than B3");
+					System.out.println("B4 is the odd ball");
+				}
+			} else if (sumA == sumB) {
+				System.out.println("B group with A4 is equal to B group with C1");
+				System.out.println("Either A1, A2, A3 is the odd (heavier) ball");
+				System.out.println("Remove A3 in C group and compare A1 and A2");
+				if (A.get(0).intValue() <  A.get(1).intValue()) {
+					System.out.println("A2 is heavier than A1");
+					System.out.println("A2 is the odd ball");
+				} else if (A.get(0).intValue() >  A.get(1).intValue()) {
+					System.out.println("A1 is heavier than A2");
+					System.out.println("A1 is the odd ball");
+				} else if (A.get(0).intValue() ==  A.get(1).intValue()) {
+					System.out.println("A1 and A2 is equal");
+					System.out.println("A3 is the odd ball");
+				}
+			}
 		} else if(sumA < sumB) {
 			
 		}
