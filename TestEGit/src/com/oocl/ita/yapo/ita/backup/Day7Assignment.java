@@ -30,7 +30,7 @@ public class Day7Assignment extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/JSAssignment1.html");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/JSHome.html");
 		requestDispatcher.forward(request, response);
 	}
 
