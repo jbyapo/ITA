@@ -8,18 +8,13 @@ function Substring() {
     
     var str = document.getElementById("a").value;
 	var stroutput = "";
-	var counter1=1;
-	var counter2=str.length;
-	
-	var str1 = 0;
-	var str2 = 0;
-	
-	while(counter1<str.length){
-		for(var ctr=0; ctr<str.length-1 ; ctr++) {
-			stroutput += str.substring(ctr,str.length-counter2) + ",";
+	var counter1=0;
+
+	while(counter1<=str.length){
+		for(var ctr=0; ctr<counter1; ctr++) {
+			stroutput += str.substring(ctr,counter1) + ",";
 		}
-		counter1++;
-		counter2--;
+		counter1+=1;
 	}
 
 	return stroutput;
