@@ -13,4 +13,23 @@
 	<bean id ="helloSpring3" class="com.oocl.ita.yapo.day13.sampleexercise.HelloSpring_init_dest" init-method="init" destroy-method="destroy">
 		<property name="message" value="Hey dude!"/>
 	</bean>
+	
+   <bean id="shape1" class="com.oocl.ita.yapo.day13.sampleexercise.Shape">
+      <property name = "shape">
+         <bean id = "circle" class = "com.oocl.ita.yapo.day13.sampleexercise.Circle"/>
+      </property>
+   </bean>
+   
+   <bean id="shape2" class="com.oocl.ita.yapo.day13.sampleexercise.Shape">
+      <property name = "shape">
+         <bean id = "triangle" class = "com.oocl.ita.yapo.day13.sampleexercise.Triangle"/>
+      </property>
+   </bean>
+   
+   	<bean id ="employee" class="com.oocl.ita.yapo.day13.sampleexercise.Employee">
+		<property name="name" value="Japo Jabe"/>
+		<property name="role" value="Model"/>
+		<property name="id" value="1107"/>
+	</bean>
+	
 </beans>
